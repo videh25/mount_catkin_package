@@ -27,7 +27,8 @@ _Using rosrun_
 ```shell
 rosrun urdf2macro.py <Absolute Path of the gripper.urdf> <Flange to TCP distance> <Name of base_link of gripper>
 ```
-**Flange to TCP distance:** Tool Centre Point (TCP), to be used for Inver Kinematics will be set based on this
+**Flange to TCP distance:** Tool Centre Point (TCP), to be used for Inver Kinematics will be set based on this.
+
 **Name of base_link of gripper:** To be searched in the <gripper>.urdf file. It is the name of link supposed to be attached directly to flange.
 
 The new <gripper>.xacro file will be generated in the same folder and same name as the <gripper>.urdf. Feel free to copy paste this .xacro file for convinience.
