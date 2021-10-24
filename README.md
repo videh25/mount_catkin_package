@@ -25,7 +25,7 @@ This function converts a takes .urdf file as input and generates a .xacro file t
 Usage:
 _Using rosrun_
 ```shell
-rosrun urdf2macro.py <Absolute Path of the gripper.urdf> <Flange to TCP distance> <Name of base_link of gripper>
+rosrun urdf2macro.py <Absolute Path of the gripper.urdf> <Flange to TCP distance (in meters)> <Name of base_link of gripper>
 ```
 **Flange(Enf Effector of Arm) to TCP distance:** Tool Centre Point (TCP), to be used for Inverse Kinematics will be set based on this.
 
@@ -35,6 +35,8 @@ The new <gripper>.xacro file will be generated in the same folder and same name 
   
 #### 2. mount.py
 Loads the given <gripper>.xacro and <arm>.xacro by generating a .xacro file by combining both individual .xacros. The resultant .xacro is saved as the mount\scripts\urdf\arm_with_gripper.xacro
+
+**Will run within the direcotry mount/scripts only due to folder dependency.**
   
 Usage:
   _Using rosun_
@@ -51,26 +53,35 @@ Once the arm and gripper are successfully loaded, launch the model using display
   ```
   This should launch the loaded model of arm and gripper in rviz.
 
-## Examples
+## Examples (Do change the paths while copying)
 For the given robotic arm sets and gripper,
   
 1. Convert the gripper urdf to xacro
   
   ```shell
-  
+  rosrun mount urdf2macro.py /home/videh/Documents/OrangeWoodProblem/src/robotiq_arg85_description/robots/robotiq_arg85_description.URDF 0.145 robotiq_85_base_link
+
   ```
 2. Load the gripper and arm
   _For UR5_
   ```shell
-  
+  rosrun mount mount.py /home/videh/Documents/OrangeWoodProblem/src/ur_description/urdf/ur5.urdf.xacro /home/videh/Documents/OrangeWoodProblem/src/robotiq_arg85_description/robots/robotiq_arg85_description.xacro ur5_robot
   ```
   
   
   _For UR3_
   ```shell
-  
+  rosrun mount mount.py /home/videh/Documents/OrangeWoodProblem/src/ur_description/urdf/ur3.urdf.xacro /home/videh/Documents/OrangeWoodProblem/src/robotiq_arg85_description/robots/robotiq_arg85_description.xacro ur3_robot
+
   ```
  3. Launching any loaded model in rviz
-  UR5
+  ```shell
+  roslaunch mount display.launch
+  ```
   
-  UR3
+  ### UR5
+  ![Screenshot from 2021-10-24 20-06-53](https://user-images.githubusercontent.com/66770479/138599045-dc51b527-2c99-426e-8047-769c34c29c46.png)
+  
+  ### UR3
+  
+![Screenshot from 2021-10-24 20-10-22](https://user-images.githubusercontent.com/66770479/138599072-cb014830-9c3e-447d-9882-bc90be90501d.png)
