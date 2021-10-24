@@ -51,7 +51,7 @@ Once the arm and gripper are successfully loaded, launch the model using display
   ```
   This should launch the loaded model of arm and gripper in rviz.
 
-##Examples
+## Examples
 For the given robotic arm sets and gripper,
   
 1. Convert the gripper urdf to xacro
