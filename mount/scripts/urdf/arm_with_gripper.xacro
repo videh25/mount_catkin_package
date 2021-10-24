@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="arm_with_gripper">
+<xacro:include filename="/home/videh/Documents/OrangeWoodProblem/src/ur_description/urdf/ur3.urdf.xacro" />
+<xacro:include filename="/home/videh/Documents/OrangeWoodProblem/src/robotiq_arg85_description/robots/robotiq_arg85_description.xacro"/>
+<xacro:ur3_robot prefix="" joint_limited="true" />
+<xacro:gripper />
+<link name="world" />
+
+<joint name="world_joint" type="fixed">
+	<parent link="world" />
+	<child link = "base_link" />
+	<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+</joint>
+
+</robot>
