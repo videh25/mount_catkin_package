@@ -1,10 +1,10 @@
 # mount_catkin_package
-A ROS package to mount a gripper (with given URDF) on a robotic arm's flage (given URDF). 
+A ROS package to mount a gripper (with given URDF) on a robotic arm's flange (given URDF). 
 Note: The package was built on ROS-Noetic
 
 ### Getting Started
-1. Create a catkin workspace for these packages to download in.
-2. Download the three packages in the src folder of the worskpace.
+1. Create a catkin workspace for these packages to download.
+2. Download the three packages in the src folder of the workspace.
 3. Run `catkin_make` in the workspace folder.
 
 ### Description of Packages
@@ -19,8 +19,8 @@ Package developed to easily mount the grippers on the robotic arms
 
 ### 2 main functions:
 #### 1. urdf2macro.py
-For modularity and mounting, it is handy to have a .xacro file of the gripper and arm saved. However, .urdf file of gripper was available.
-This function converts a takes .urdf file as input and generates a .xacro file that can be used to mount the gripper on arm.
+For modularity and mounting, it is handy to have a .xacro file of the gripper and arm saved. However, only .urdf file of gripper was available.
+This function takes a .urdf file as input and generates a .xacro file that can be used to mount the gripper on arm.
 
 Usage:
 _Using rosrun_
@@ -36,7 +36,7 @@ The new <gripper>.xacro file will be generated in the same folder and same name 
 #### 2. mount.py
 Loads the given <gripper>.xacro and <arm>.xacro by generating a .xacro file by combining both individual .xacros. The resultant .xacro is saved as the mount\scripts\urdf\arm_with_gripper.xacro
 
-**Will run within the direcotry mount/scripts only due to folder dependency.**
+**Will run within the directory mount/scripts ONLY due to folder dependency.**
   
 Usage:
   _Using rosun_
