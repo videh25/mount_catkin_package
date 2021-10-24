@@ -17,7 +17,15 @@ Folder cloned from https://github.com/a-price/robotiq_arg85_description
 ### 3. mount
 Package developed to easily mount the grippers on the robotic arms
 
-### 2 main functions:
-1. mount.py
-2. urdf2macro.py
+## 2 main functions:
+### 1. urdf2macro.py
+For modularity and mounting, it is handy to have a .xacro file of the gripper saved.
+This function converts a takes .urdf file as input and generates a .xacro file that can be used to mount the gripper on arm.
+
+Usage:
+```shell
+#Using rosrun
+rosrun urdf2macro.py <Absolute Path of the urdf file of gripper> <Flange to TCP distance> <Name of base_link of gripper>
+```
+### 2. mount.py
 
