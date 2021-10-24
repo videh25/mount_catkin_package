@@ -43,3 +43,10 @@ Usage:
   ```
 
 **Name of macro of the arm:** To be searched in the <arm>.xacro file. It is the name of macro used to define the links and joints of the arm.
+  
+## Launching the loaded arm-gripper pair in rviz
+Once the arm and gripper are successfully loaded, launch the model using display.launch as follows:
+  ```shell
+  roslaunch mount display.launch
+  ```
+  This should launch the loaded model of arm and gripper in rviz.
